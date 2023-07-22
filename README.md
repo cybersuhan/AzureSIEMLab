@@ -107,7 +107,61 @@ Finally, I get to the Review Page where I press "Create" to Deploy my new Virtua
 
 The purpose of a Log Analytics Workspace is to inject logs from the Virtual Machine, specifically the Windows event logs. I will also create a custom log that contains geographic information so that I can discover where the attacks are coming from. The log analytics workspaces are where the logs are stored. Then, Azure Sentinel will connect to this workspace to display the geographical data on the map. 
 
-To create a log analytics workspace, I take the following steps: <br />
+To create a log analytics workspace, I take the following steps: <br /><br />
+
+Open Log Analytics Page: <br />
+<img src="https://i.imgur.com/9j3WXa2.png" height="80%" width="80%" alt="Search Log Analytics"/><br />
+
+Click on Create: <br />
+<img src="https://i.imgur.com/F1dDRDk.png" height="80%" width="80%" alt="Create Log Analytics"/><br />
+
+In the Create Log Analytics Workspace page, I select the <b>"HoneyPotLab"</b> as the resource group as it is the one I created in the previous step. For the Instance name, I name it <b>"LAWHoneyPot"</b> as Log Analytics Workspace HoneyPot. Then I press "Review + Create". On the next page, I review the configuration I set and press create. <br />
+
+<img src="https://i.imgur.com/gSgyLJP.png" height="80%" width="80%" alt="Log Analytics Config"/><br />
+<img src="https://i.imgur.com/UgbNaIs.png" height="80%" width="80%" alt="Review and Create Log Analytics"/><br /><br />
+
+Now, I need to enable the ability to gather log information from the Virtual Machine into the Log Analytics Workspace. For this, I go to the Security Center.<br />
+<img src="https://i.imgur.com/aG5rQfU.png" height="80%" width="80%" alt="Review and Create Log Analytics"/><br /><br />
+
+In the Security Center, I find "Environment Settings" on the left-hand panel and click on it.<br />
+<img src="https://i.imgur.com/MLD95mu.png" height="80%" width="80%" alt="Click Environment Settings"/><br /><br />
+
+Next, I click the dropdown of my Azure Subscription and find my Log Analytics Workspace (LAW). I click on Edit settings for my LAW:<br />
+<img src="https://i.imgur.com/lC36iJP.png" height="80%" width="80%" alt="Edit LAW settings"/><br /><br />
+
+I toggle the "SQL Server on Machines" to "Off" and Save the configuration:<br /> 
+<img src="https://i.imgur.com/93Q3hfW.png" height="80%" width="80%" alt="Edit LAW settings"/><br /><br />
+
+Next, I click on "Data Collection" on the left-hand panel. I select "All Events" from the list and save the configuration:<br />
+<img src="https://i.imgur.com/8Qyugqn.png" height="80%" width="80%" alt="Data Collection"/><br /><br />
+
+I need to connect the Log Analytics Workspace to the Virtual Machine. To do this I go back to the Log Analytics Workspace Page and click on my LAW:<br />
+<img src="https://i.imgur.com/OpseDSA.png" height="80%" width="80%" alt="Data Collection"/><br /><br />
+
+Then I find "Azure Virtual Machine" under "Connect Data Source" or "Virtual Machines" on the left-hand side panel:<br />
+<img src="https://i.imgur.com/SvNChjo.png" height="80%" width="80%" alt="Connect Data Source"/><br /><br />
+
+I find my Virtual Machine created in the first step and click on it. <br />
+<img src="https://i.imgur.com/Xz4UU4F.png" height="80%" width="80%" alt="Select VM"/><br /><br />
+
+On the next page, I press "Connect" to connect my Virtual Machine to my LAW:<br />
+<img src="https://i.imgur.com/UnsFsnj.png" height="80%" width="80%" alt="Connect VM"/><br /><br />
+
+
+<h4>Setting up Microsoft Sentinal</h4>
+Microsoft Sentinal is the SIEM that I will use to visualize the attack data. <br /><br />
+
+To Set Up Microsoft Sentinal, I search Sentinal on the Azure Portal Homepage and Click on it.<br />
+<img src="https://i.imgur.com/NHU3cuw.png" height="80%" width="80%" alt="Search Sentinal"/><br /><br />
+
+Next, I click on "Create Microsoft Sentinal."<br />
+<img src="https://i.imgur.com/aRHbV3Q.png" height="80%" width="80%" alt="Search Sentinal"/><br /><br />
+
+Then, I select the LAW that I created in the previous step and add it.<br />
+<img src="https://i.imgur.com/LyOPwux.png" height="80%" width="80%" alt="Search Sentinal"/><br /><br />
+
+At this point, Microsoft Sentinel is connected to our Log Analytics Workspace. 
+
 
 
 
