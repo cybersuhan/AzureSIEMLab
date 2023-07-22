@@ -1,4 +1,4 @@
-<h1>SIEM in Microsoft Sentinal (Azure)</h1>
+<h1>SIEM (Microsoft Sentinel) in Azure</h1>
 
  ### [YouTube Demonstration](https://YT_LINK_HERE)
 
@@ -161,6 +161,19 @@ Then, I select the LAW that I created in the previous step and add it.<br />
 <img src="https://i.imgur.com/LyOPwux.png" height="80%" width="80%" alt="Search Sentinal"/><br /><br />
 
 At this point, Microsoft Sentinel is connected to our Log Analytics Workspace. 
+
+<h4>Starting Azure Virtual Machine through Remote Connection</h4>
+After I completed connecting Sentinel to the LAW, Now I establish a Remote Connection from my Machine to the Virtual Machine that I created in Azure. For this, I need the IP address of the Virtual Machine. To get the IP Address, I go to my Azure Portal and find "Virtual Machines" and click on it. The portal takes me to the list of my virtual machine where I select my HoneyPotLab Virtual Machine:<br /> 
+<img src="https://i.imgur.com/qWEY87F.png" height="80%" width="80%" alt="Find Virtual Machine"/><br /><br />
+<img src="https://i.imgur.com/IGpoNQN.png" height="80%" width="80%" alt="Select Virtual Machine"/><br /><br />
+
+Next, I can see the <b>Public IP Address</b> of my Virtual Machine:<br />
+<img src="https://i.imgur.com/88YComR.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
+
+I copy the Public IP Address and on my device, I open <b>Remote Desktop Connection</b>. I paste the VM IP address and click "Connect". In the next window, I type the username and password that I set while configuring the VM and click "OK".
+<img src="https://i.imgur.com/aeBAZxp.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
+<img src="https://i.imgur.com/SiVFr2r.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
+
 
 
 
