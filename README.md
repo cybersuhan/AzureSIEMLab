@@ -170,9 +170,13 @@ After I completed connecting Sentinel to the LAW, Now I establish a Remote Conne
 Next, I can see the <b>Public IP Address</b> of my Virtual Machine:<br />
 <img src="https://i.imgur.com/88YComR.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
 
-I copy the Public IP Address and on my device, I open <b>Remote Desktop Connection</b>. I paste the VM IP address and click "Connect". In the next window, I type the username and password that I set while configuring the VM and click "OK".
-<img src="https://i.imgur.com/aeBAZxp.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
-<img src="https://i.imgur.com/SiVFr2r.png" height="80%" width="80%" alt="VM IP Address"/><br /><br />
+I copy the Public IP Address and on my device, I open <b>Remote Desktop Connection</b>. I paste the VM IP address and click "Connect". In the next window, I type the username and password that I set while configuring the VM and click "OK". If the credentials are correct, I get logged in to the VM in the Remote Desktop Connection Window. 
+<img src="https://i.imgur.com/aeBAZxp.png" height="80%" width="80%" alt="RDC Window"/><br /><br />
+<img src="https://i.imgur.com/SiVFr2r.png" height="80%" width="80%" alt="RDC Window Credentials"/><br /><br />
+
+The Virtual Machine IP is shown on the top of the Remote Desktop Connection Window.
+<img src="https://i.imgur.com/Tuf7IkD.png" height="80%" width="80%" alt="VM IP Address in RDC"/><br /><br />
+
 
 
 
