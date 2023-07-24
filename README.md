@@ -210,20 +210,20 @@ Then I copy the log file that the script output in previously and upload it as a
 Next, I check the if the file is correct and the delimitation is right and I click <i>Next</i><br />
 <img src="https://i.imgur.com/VXUTWLb.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
 
-For the custom log name, I type in "FailedRDP_WITH_GEO" and click next. In Azure, the custom table can be queried as "FailedRDP_WITH_GEO_CL"<br />
-<img src="https://i.imgur.com/eckfP83.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+For the custom log name, I type in "FAILED_RDP_GEO" and click next. In Azure, the custom table can be queried as "FAILED_RDP_GEO_CL"<br />
+<img src="https://i.imgur.com/GxkEZNc.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
 
 In the VM, the custom log file is saved in "C:\ProgramData\failed_rdp.log", which is what I will write in the collection path. <br />
 <img src="https://i.imgur.com/0pvt6TL.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
 
-Next, I wait for about an hour before going to the Azure portal to my Log Analytics Workspace and click "Logs". I try and run the FailedRDP_WITH_GEO_CL query and get the data from the log file: <br />
-<img src="https://i.imgur.com/Y56otEK.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+Next, I wait for about an hour before going to the Azure portal to my Log Analytics Workspace and click "Logs". I run the FAILED_RDP_GEO_CL query and get the data from the log file: <br />
+<img src="https://i.imgur.com/zfaW6aF.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
 
 <b>At this point, I have the geographical data coming into the Log Analytics workspace as raw data in a custom table.</b>
 
 <h4>Setting up a map in Microsoft Sentinal</h4>
 
-Now that I am getting data in real-time, I want to set up Sentinal and plot the failed login attempts location in a map. To do that, I take the following steps:<br /><br />
+Now that I am getting data in real-time, I want to set up Sentinal and plot the failed login attempts' location on a map. To do that, I take the following steps:<br /><br />
 
 I go to Azure Portal and into Microsoft Sentinal. There, I click "Workbooks" from the left-hand panel and then click "Add Workbook"<br />
 
@@ -231,7 +231,9 @@ I go to Azure Portal and into Microsoft Sentinal. There, I click "Workbooks" fro
 
 I add a query in the workbook and edit the query to <br />
 <img src="https://i.imgur.com/9Gj87su.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
-<img src="https://i.imgur.com/LUR629K.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+<img src="https://i.imgur.com/BLHv7B7.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+
 
 
 
