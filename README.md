@@ -229,12 +229,34 @@ I go to Azure Portal and into Microsoft Sentinal. There, I click "Workbooks" fro
 
 <img src="https://i.imgur.com/6NdoM9i.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 
-I add a query in the workbook and edit the query to extract columns including timestamp, country, state, username, destination, longitude and latitude.<br />
+I add a query in the workbook and edit the query to extract columns including timestamp, country, state, username, destination, longitude, and latitude.<br />
 <img src="https://i.imgur.com/9Gj87su.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
-<img src="https://i.imgur.com/BLHv7B7.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+<img src="https://i.imgur.com/Z7EHsHC.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+<i>I had stopped the Powershell script but while it was running, there were 26 failed attempts to log in from the Netherlands already.</i><br /><br />
+
+I set the visualization option to "Map":<br />
+
+<img src="https://i.imgur.com/onLp0sO.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+In the map settings, I set the Layout Settings -> Location info using to "Latitude/Longitude". I also set Metric Settings -> Metric label to "country" and Metric Value to "event_count". So, I am plotting the map according to latitude and longitude data and labeling it by country.:<br />
+
+<img src="https://i.imgur.com/EGdNQo1.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br />
+<img src="https://i.imgur.com/r2szDa7.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+I save the workbook as "Failed RDP World Map":<br />
+<img src="https://i.imgur.com/K5WSZGd.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+<b>Next, I start the Powershell Script again. With the free account of ipgeolocation.io, I can get 1000 entries per day which is not much but is fine for this project. </b><br /><br />
 
 
+After some time, I get a bunch of failed login attempts in the Virtual Machine. (Most are from the Netherlands)<br />
 
+<img src="https://i.imgur.com/D085smj.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+
+<h4>Attack Map after a period of time</h4>
+
+<b><i>I will let the script run in my Virtual Machine for some time and will see how the map updates for some time. I will post the screenshots in this section.</i></b><br /><br />
 
 
 
