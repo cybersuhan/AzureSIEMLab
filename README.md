@@ -177,6 +177,61 @@ I copy the Public IP Address and on my device, I open <b>Remote Desktop Connecti
 The Virtual Machine IP is shown on the top of the Remote Desktop Connection Window.
 <img src="https://i.imgur.com/Tuf7IkD.png" height="80%" width="80%" alt="VM IP Address in RDC"/><br /><br />
 
+<h4>Update Firewall settings in the Virtual Machine</h4>
+
+For the sake of this lab, I want to make the virtual machine discoverable so that anyone over the internet can find the device and try to brute force and log in to the machine. For that, I need to update my firewall settings. I have two choices at this point. I can either allow ICMP inbound or turn the firewall off. For this lab, I choose to turn my firewall off and try to ping the virtual machine from my computer and I get a successful ping. <br />
+
+Toggling VM Firewall Domain Profile off<br />
+<img src="https://i.imgur.com/20b6W8r.png" height="80%" width="80%" alt="Firewall Domain Off"/><br /><br />
+Toggling VM Firewall Private Profile off<br />
+<img src="https://i.imgur.com/DqbqSRW.png" height="80%" width="80%" alt="Firewall Private Off"/><br /><br />
+Toggling VM Firewall Public Profile off<br />
+<img src="https://i.imgur.com/UZqhNbO.png" height="80%" width="80%" alt="Firewall Public Off"/><br /><br />
+Pinging the VM from my computer<br />
+<img src="https://i.imgur.com/yTRyLt6.png" height="80%" width="80%" alt="Pinging the VM"/><br /><br />
+
+<h4>Custom Log Exporter</h4>
+
+Next, I want a security log exporter made Powershell that will loop through the Event Log and grabs all the events in which users fail to log in, and grabs the IP Address. With the IP Address, I can get geolocation ta from ipgeolocation.io. The Exporter program exports failed login attempts from the event viewer to a file in "C:\ProgramData" in the Virtual Machine. The following screenshot is what the file looks like after 2 minutes of running the script:
+
+<img src="https://i.imgur.com/2CWLMpM.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+<h4>Custom Log in Log Analytics Workspace</h4>
+
+In my Azure Portal, I go to my Log Analytics Workspace (LAWHoneyPot) and Select Tables:<br />
+<img src="https://i.imgur.com/rsZTZ8H.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+I create a New Custom Log Table (MMA Based):<br />
+<img src="https://i.imgur.com/3FhrFy1.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+Then I copy the log file that the script output in previously and upload it as a sample log file: <br />
+<img src="https://i.imgur.com/f3GVYG9.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+Next, I check the if the file is correct and the delimitation is right and I click <i>Next</i><br />
+<img src="https://i.imgur.com/VXUTWLb.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+For the custom log name, I type in "FailedRDP_WITH_GEO" and click next. In Azure, the custom table can be queried as "FailedRDP_WITH_GEO_CL"<br />
+<img src="https://i.imgur.com/eckfP83.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+In the VM, the custom log file is saved in "C:\ProgramData\failed_rdp.log", which is what I will write in the collection path. <br />
+<img src="https://i.imgur.com/0pvt6TL.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+Next, I wait for about an hour before going to the Azure portal to my Log Analytics Workspace and click "Logs". I try and run the FailedRDP_WITH_GEO_CL query and get the data from the log file: <br />
+<img src="https://i.imgur.com/Y56otEK.png" height="80%" width="80%" alt="Custom Log"/><br /><br />
+
+<b>At this point, I have the geographical data coming into the Log Analytics workspace as raw data in a custom table.</b>
+
+<h4>Setting up a map in Microsoft Sentinal</h4>
+
+Now that I am getting data in real-time, I want to set up Sentinal and plot the failed login attempts location in a map. To do that, I take the following steps:<br /><br />
+
+I go to Azure Portal and into Microsoft Sentinal. There, I click "Workbooks" from the left-hand panel and then click "Add Workbook"<br />
+
+<img src="https://i.imgur.com/6NdoM9i.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+
+I add a query in the workbook and edit the query to <br />
+<img src="https://i.imgur.com/9Gj87su.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
+<img src="https://i.imgur.com/LUR629K.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 
 
 
