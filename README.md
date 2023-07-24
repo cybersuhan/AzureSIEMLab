@@ -229,7 +229,7 @@ I go to Azure Portal and into Microsoft Sentinal. There, I click "Workbooks" fro
 
 <img src="https://i.imgur.com/6NdoM9i.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 
-I add a query in the workbook and edit the query to <br />
+I add a query in the workbook and edit the query to extract columns including timestamp, country, state, username, destination, longitude and latitude.<br />
 <img src="https://i.imgur.com/9Gj87su.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 <img src="https://i.imgur.com/BLHv7B7.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 
