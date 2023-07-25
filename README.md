@@ -265,7 +265,7 @@ After some time, I get a bunch of failed login attempts in the Virtual Machine. 
 <i>The VM already has 466 failed login attempts from the Netherlands, 4 from Russia, 2 from the US, and 1 attempt from Singapore in 1 hour.</i>
 
 
-<h4>After 10 Hours</h4><br />
+<h3>After 10 Hours</h3><br />
 <img src="https://i.imgur.com/VptC6yp.png" height="80%" width="80%" alt="Sentinal Workbooks"/><br /><br />
 
 
