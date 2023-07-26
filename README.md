@@ -4,10 +4,10 @@
 <ol>
  <li><a href="#description">Description</a></li>
  <li><a href="#platforms-tools-and-languages-used">Platforms, Tools and Languages</a></li>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#skills-highlighted">Skills Highlighted</a></li>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#before-starting">Before Starting</a></li>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#quick-walkthrough">Quick Walkthrough</a></li>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#step-by-step-walkthrough">Step-by-step Walkthrough</a></li>
+ <li><a href="#skills-highlighted">Skills Highlighted</a></li>
+ <li><a href="#before-starting">Before Starting</a></li>
+ <li><a href="#quick-walkthrough">Quick Walkthrough</a></li>
+ <li><a href="#step-by-step-walkthrough">Step-by-step Walkthrough</a></li>
 </ol>
 
 <h2>Description</h2>
