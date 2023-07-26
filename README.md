@@ -1,5 +1,15 @@
 <h1>Azure Sentinel Lab - Security Information and Event Management (SIEM) in Azure</h1>
 
+<h2>Contents</h2>
+<ol>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#description">Description</a></li>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#platforms-tools-and-languages-used">Platforms, Tools and Languages</a></li>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#skills-highlighted">Skills Highlighted</a></li>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#before-starting">Before Starting</a></li>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#quick-walkthrough">Quick Walkthrough</a></li>
+ <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#step-by-step-walkthrough">Step-by-step Walkthrough</a></li>
+</ol>
+
 <h2>Description</h2>
 In this cybersecurity project, I designed and implemented a SIEM (Security Information and Event Management) solution using Microsoft Sentinel in the Azure cloud platform. The primary objectives of this lab were to:<br /><br />
 <b>Set up an Azure Environment:</b> I created a free Azure account and established a Virtual Machine (VM) acting as a honeypot for this lab. The VM was configured to be discoverable over the internet by turning off the firewall settings.<br /><br />
@@ -22,7 +32,7 @@ In this cybersecurity project, I designed and implemented a SIEM (Security Infor
 <b>Log Collection and Analysis:</b> The successful setup and analysis of custom logs in the Log Analytics Workspace highlighted my expertise in log management and analysis.<br />
 <b>Data Visualization:</b> Creating a dynamic world map using Microsoft Sentinel Workbooks showcased my data visualization capabilities for cybersecurity monitoring.<br />
 
-<h3>Before Starting</h3>
+<h2>Before Starting</h2>
 I set up my Azure account, taking advantage of the $200 free Azure credits for new users, which provided sufficient resources for this lab. 
 
 <h2>Quick Walkthrough</h2>
