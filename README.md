@@ -2,8 +2,8 @@
 
 <h2>Contents</h2>
 <ol>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#description">Description</a></li>
- <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#platforms-tools-and-languages-used">Platforms, Tools and Languages</a></li>
+ <li><a href="#description">Description</a></li>
+ <li><a href="#platforms-tools-and-languages-used">Platforms, Tools and Languages</a></li>
  <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#skills-highlighted">Skills Highlighted</a></li>
  <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#before-starting">Before Starting</a></li>
  <li><a href="https://github.com/cybersuhan/AzureSIEMLab/edit/main/README.md#quick-walkthrough">Quick Walkthrough</a></li>
