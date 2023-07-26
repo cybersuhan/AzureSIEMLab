@@ -1,33 +1,61 @@
-<h1>SIEM (Microsoft Sentinel) in Azure</h1>
+<h1>Azure Sentinel Lab - Security Information and Event Management (SIEM) in Azure</h1>
 
 <h2>Description</h2>
-In this project, I do the following tasks:
-- Set up a free Azure Account
-- Create a Virtual Machine in Azure
-- Turn Off the Firewall in the Virtual Machine so that the machine is discoverable over the internet
-- Use the combination of Powershell script and geolocation.io API key to gather geographic information from failed login attempts to the Virtual Machine
-- Create a Table in Azure Log Analytics Workspace to collect data exported by the Powershell script
-- Create a Microsoft Sentinel Workbook that features a World Map with failed login attempts and geographic data plotted on it.
-<br />
-
+In this cybersecurity project, I designed and implemented a SIEM (Security Information and Event Management) solution using Microsoft Sentinel in the Azure cloud platform. The primary objectives of this lab were to:<br /><br />
+<b>Set up an Azure Environment:</b> I created a free Azure account and established a Virtual Machine (VM) acting as a honeypot for this lab. The VM was configured to be discoverable over the internet by turning off the firewall settings.<br /><br />
+<b>Geolocation-based Threat Monitoring:</b> To gather geographical information from failed login attempts to the Virtual Machine, I used a combination of PowerShell script and the IPGeolocation API. This allowed me to track the source locations of potential attackers.<br /><br />
+<b>Custom Log Collection and Analysis:</b> A custom PowerShell script was developed to extract failed login attempts from the event viewer on the Virtual Machine and export them to a log file in the "C:\ProgramData" directory.<br /><br />
+<b>Microsoft Sentinel Integration:</b> I connected Microsoft Sentinel to the Log Analytics Workspace to leverage its powerful capabilities for real-time log analysis and visualization.<br /><br />
+<b>Visualizing Attack Data:</b> Using Microsoft Sentinel Workbooks, I created a custom workbook that featured a world map plotting the failed login attempts' geolocation data. The map was dynamically updated as new data was collected.<br /><br />
 
 <h2>Platforms, Tools and Languages used</h2>
 
-- <b>Azure</b> 
-- <b>IPGeolocation API</b>
-- <b>Powershell</b>
-- <b>Microsoft Sentinel</b>
+- Azure
+- IPGeolocation API
+- Powershell
+- Microsoft Sentinel
 
-<h2>Walkthrough</h2>
+<h2>Skills Highlighted</h2>
+<b>Azure Cloud Platform:</b> I demonstrated proficiency in setting up an Azure environment, creating Virtual Machines, and managing resources within a resource group.<br />
+<b>PowerShell Scripting:</b> Developing the custom log exporter using PowerShell showcased my scripting skills for log data extraction and API integration.<br />
+<b>SIEM Integration:</b> I illustrated my ability to integrate and configure Microsoft Sentinel with Azure services, such as Log Analytics Workspace and Virtual Machines.<br />
+<b>Log Collection and Analysis:</b> The successful setup and analysis of custom logs in the Log Analytics Workspace highlighted my expertise in log management and analysis.<br />
+<b>Data Visualization:</b> Creating a dynamic world map using Microsoft Sentinel Workbooks showcased my data visualization capabilities for cybersecurity monitoring.<br />
 
 <h3>Before Starting</h3>
-The first thing that I did was set up an Azure account. I had to enter my credit card information but Microsoft provides new users with $200 of free Azure credits that they can use over a month, which is enough for this lab. 
+I set up my Azure account, taking advantage of the $200 free Azure credits for new users, which provided sufficient resources for this lab. 
 
-<h3>After Account Setup</h3>
-Next, I head on to https://portal.azure.com:
-<img src="https://i.imgur.com/52ILMGM.png" height="80%" width="80%" alt="Azure Portal"/> 
+<h2>Quick Walkthrough</h2>
+
+<h3>Virtual Machine Setup</h3>
+- I created a Virtual Machine (VM) in Azure, naming it "HoneyPot-VirtualMachine" and placing it in the "HoneyPotLab" resource group. The VM was located in the "East US" region.
+The VM used the "Windows 10 Pro" image with the "Standard_B1s" size (1 vCPU, 1GiB memory).<br />
+- I configured RDP (Remote Desktop Protocol) access to the VM, making it publicly discoverable.<br />
+
+<h3>Log Analytics Workspace (LAW) Configuration</h3>
+- I created a Log Analytics Workspace named "LAWHoneyPot" in the "HoneyPotLab" resource group to collect and store log data.<br />
+- I enabled log data collection from the VM to the LAW by configuring data collection settings in the Security Center.<br />
+- I connected the VM to the LAW to send log data from the VM's event viewer to the workspace.<br />
+
+<h3>Custom Log Exporter</h3>
+- I developed a custom PowerShell script that extracted failed login attempts from the VM's event logs and retrieved the corresponding IP addresses.<br />
+- Using the IPGeolocation API, I obtained geographic information based on the IP addresses and exported the data to a log file in the VM's "C:\ProgramData" directory.<br />
+
+<h3>Custom Log in Log Analytics Workspace</h3>
+- In the LAW, I created a custom log table named "FAILED_RDP_GEO_CL" to store the geographic data obtained from the PowerShell script.<br />
+- I uploaded a sample log file generated by the script to validate the custom log format.<br />
+
+<h3>Setting up a Map in Microsoft Sentinel</h3>
+- I accessed Microsoft Sentinel from the Azure portal and created a new workbook named "Failed RDP World Map."<br />
+- I wrote a query in the workbook to extract relevant columns, including timestamp, country, state, username, destination, longitude, and latitude.<br />
+- I configured the visualization option to display the data on a world map, plotting the latitude and longitude data and labeling it by country.<br />
+
+<h3>Monitoring Attack Data</h3>
+- After starting the PowerShell script, the custom log exporter collected and uploaded failed login attempts and geolocation data to the Log Analytics Workspace.<br />
+- Microsoft Sentinel continuously analyzed the data and displayed real-time information on the world map in the "Failed RDP World Map" workbook.<br />
 
 
+<h2>Step-by-step Walkthrough</h2>
 <h4>Creating a Virtual Machine</h4>
 This is the machine that is going to be exposed on the internet. Different people from all around the world will attempt to attack this machine and try to login to this machine. Essentially, This machine acts as a <b>Honeypot</b> for this lab. 
 <br />
